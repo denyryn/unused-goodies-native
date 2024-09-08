@@ -128,7 +128,7 @@ if (isset($_SESSION['user_id'])) {
                         <div class="mt-6 space-y-6">
                             <div class="flex items-center">
                                 <!-- Display product image -->
-                                <img src='<?php echo $cartItem['image_path']; ?>'
+                                <img src='<?php $utility->productImage($cartItem['image_path']); ?>'
                                     class="object-cover w-16 h-16 p-2 bg-gray-100 aspect-square shrink-0" />
 
                                 <div class="flex-1 ml-4">

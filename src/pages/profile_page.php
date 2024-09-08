@@ -146,10 +146,10 @@ $utility = new utility();
                             <tr> 
                                 <td class="
                                 pr-2 ">Name</td>
-                                                                                                                                                                        <td class="
+                                                                                                                                                                                <td class="
                             pr-2 "> : </td>
-                                                                                                                                                                    <td> <input
-                                                                                                                                                                            class="
+                                                                                                                                                                            <td> <input
+                                                                                                                                                                                    class="
                             w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm
                             focus:ring-blue-500 focus:border-blue-500 block p-2.5" type="text" id="fullName"
                                 name="full_name" value="<?php echo $profile['full_name']; ?>">
@@ -267,15 +267,15 @@ $utility = new utility();
                     <div class="flex items-end m-2 md:mr-2 md:ml-2 md:items-center ">
                         <div class="flex flex-col">
                             <img class="object-cover mb-2 rounded-full w-36 max-h-36 md:h-max md:max-h-52 md:rounded-xl md:w-40"
-                                src="<?php $utility->profilePhoto($profile['profile_photo']); ?>" alt="moon" id="imgBase"">
+                                src="<?php $utility->profilepicture($profile['profile_photo']); ?>" alt="moon" id="imgBase"">
                         <p class=" mt-2 font-semibold text-center "><?php echo $profile['username']; ?></p>
+                                                                                                                                                                        </div>
+                                                                                                                                                                    </div>
                                                                                                                                                                 </div>
                                                                                                                                                             </div>
                                                                                                                                                         </div>
-                                                                                                                                                    </div>
-                                                                                                                                                </div>
 
-                                                                                                                                            <?php
+                                                                                                                                                    <?php
     }
     ?>
 

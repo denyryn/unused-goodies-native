@@ -10,20 +10,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        rubik: [
-          "Rubik",
-          system - ui,
-          -apple - system,
-          BlinkMacSystemFont,
-          "Segoe UI",
-          Roboto,
-          Oxygen,
-          Ubuntu,
-          Cantarell,
-          "Open Sans",
-          "Helvetica Neue",
-          sans - serif,
-        ],
+        rubik: ["Rubik", "sans-serif"],
       },
     },
   },

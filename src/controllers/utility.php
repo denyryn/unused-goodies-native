@@ -4,9 +4,15 @@ class utility
   public function __construct()
   {
   }
+
   public function trimFilter($param)
   {
     return trim(filter_var($param, FILTER_SANITIZE_FULL_SPECIAL_CHARS));
+  }
+
+  public function specialChars($param)
+  {
+    echo htmlspecialchars($param);
   }
 
   public function showError($error_name)
@@ -19,7 +25,7 @@ class utility
 
   public function staticAssets($file)
   {
-    echo '../../assets/' . $file;
+    $this->specialChars('../../assets/' . $file);
   }
 
   public function svgAssets($file)
@@ -29,12 +35,12 @@ class utility
 
   public function imgAssets($file)
   {
-    echo '../../assets/img/' . $file;
+    $this->staticAssets('img/' . $file);
   }
 
   public function uploadedAsset($file)
   {
-    echo '../../public/uploads/' . $file;
+    $this->specialChars('../../public/uploads/' . $file);
   }
 
   public function profilePicture($file)
@@ -51,7 +57,7 @@ class utility
     }
   }
 
-  public function productPicture($file)
+  public function productImage($file)
   {
     $this->uploadedAsset("product_images/" . $file);
   }

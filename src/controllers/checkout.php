@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include './config.php';
+include '../controllers/connection.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $user_id = $_SESSION['user_id'];
@@ -43,16 +43,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $stmtEmptyCart = $pdo->prepare("DELETE FROM shopping_Cart
                                         WHERE user_id = :user_id");
-        $stmtEmptyCart -> bindParam(':user_id', $user_id);
-        $stmtEmptyCart -> execute();
+        $stmtEmptyCart->bindParam(':user_id', $user_id);
+        $stmtEmptyCart->execute();
         $pdo->commit();
 
         //redirect ke order details page dari order yang telah dibuat
-        header('Location: ../order_details.php');
+        header('Location: ../pages/order_details.php');
         exit;
     }
 } else {
-    header('Location: ../checkout_products.php');
+    header('Location: ../pages/checkout_products.php');
     exit;
 }
-?>

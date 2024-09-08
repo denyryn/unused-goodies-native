@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $lastData = getProductById($lastId);
         $imageCategory = $lastData['category_name']; // This var is for substitute it to image path
 
-        $targetDir = "../uploads/product_images/$imageCategory/$product_name/";
+        $targetDir = "../../../public/uploads/product_images/$imageCategory/$product_name/";
         $fileInputName = 'image';
 
         // buat folder jika tidak ada
@@ -41,9 +41,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // memakai handleImageupload yang sama
         $imagePath = handleImageUpload($fileInputName, $targetDir);
 
+
         // jika return dari handleimageupload tidak flase maka gambar akan diupload
         if ($imagePath !== false) {
-            addImageById($lastId, $imagePath);
+            $dbImagePath = $imageCategory . '/' . $product_name . '/' . $imagePath['filename'];
+            addImageById($lastId, $dbImagePath);
 
             header('Location: ./manage_products_page.php');
             exit;

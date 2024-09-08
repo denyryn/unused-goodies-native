@@ -31,7 +31,7 @@ if (isset($_GET['action']) && $_GET['action'] === 'edit' && isset($_GET['product
         $category_id = $_POST['category_id'];
 
         $imageCategory = $product['category_name']; // This var is for substituting it to the image path
-        $targetDir = "../uploads/product_images/$imageCategory/$product_name/";
+        $targetDir = "../../../public/uploads/product_images/$imageCategory/$product_name/";
         $fileInputName = 'image';
 
         // cek apakah folder ada jika tidak, maka akan dibuat
@@ -49,6 +49,7 @@ if (isset($_GET['action']) && $_GET['action'] === 'edit' && isset($_GET['product
         if (!empty($_FILES[$fileInputName]['name'])) {
             // diupload dan dicek
             $imagePath = handleImageUpload($fileInputName, $targetDir);
+            $dbImagePath = $imageCategory . '/' . $product_name . '/' . $imagePath['filename'];
 
             // cek jika hasil keluaran false maka
             if ($imagePath === false) {
@@ -67,7 +68,7 @@ if (isset($_GET['action']) && $_GET['action'] === 'edit' && isset($_GET['product
         }
 
         // update data
-        if (updateProduct($product_id, $product_name, $description, $price, $stock_quantity, $category_id, $imagePath)) {
+        if (updateProduct($product_id, $product_name, $description, $price, $stock_quantity, $category_id, $dbImagePath)) {
             // Redirect ke halaman utama.
             header('Location: ./manage_products_page.php');
             exit;

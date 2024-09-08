@@ -5,26 +5,32 @@ class admin_utility extends utility
 {
   public function uploadedAsset($file)
   {
-    echo '../../../public/uploads/' . $file;
-  }
-  public function svgAssets($file)
-  {
-    echo '../../../assets/svg/' . $file . '.svg';
+    $this->specialChars('../../../public/uploads/' . $file);
   }
 
-  public function productImage($file)
+  public function staticAssets($file)
   {
-    $this->uploadedAsset("product_images/" . $file);
+    echo '../../../assets/' . $file;
   }
 
-  public function categoryPicture($type, $file)
-  {
-    if ($type == "base") {
-      $this->uploadedAsset("category_images/base/" . $file);
-    } elseif ($type == "hover") {
-      $this->uploadedAsset("category_images/hover/" . $file);
-    }
-  }
+  // public function svgAssets($file)
+  // {
+  //   echo '../../../assets/svg/' . $file . '.svg';
+  // }
+
+  // public function productImage($file)
+  // {
+  //   $this->uploadedAsset("product_images/" . $file);
+  // }
+
+  // public function categoryPicture($type, $file)
+  // {
+  //   if ($type == "base") {
+  //     $this->uploadedAsset("category_images/base/" . $file);
+  //   } elseif ($type == "hover") {
+  //     $this->uploadedAsset("category_images/hover/" . $file);
+  //   }
+  // }
 
   public function paymentProof($file)
   {

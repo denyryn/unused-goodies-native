@@ -6017,7 +6017,7 @@ details.collapse summary::-webkit-details-marker {
   vertical-align: -0.125em;
 }
 .font-rubik {
-  font-family: Rubik;
+  font-family: Rubik, sans-serif;
 }
 .text-2xl {
   font-size: 1.5rem;
@@ -6349,10 +6349,6 @@ details.collapse summary::-webkit-details-marker {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-.text-yellow-500 {
-  --tw-text-opacity: 1;
-  color: rgb(194 120 3 / var(--tw-text-opacity));
 }
 .underline {
   text-decoration-line: underline;

@@ -1,6 +1,6 @@
 <?php
-require_once('../controllers/connection.php');
-require_once("../controllers/utility.php ");
+require_once("../controllers/connection.php");
+require_once("../controllers/utility.php");
 
 $utility = new utility();
 
@@ -93,7 +93,7 @@ $category_name = !empty($category_data) ? $category_data[0]['category_name'] : '
                         class="p-3 transition duration-200 ease-in-out border rounded-md group active:scale-95">
                         <div
                             class="w-full overflow-hidden bg-gray-200 rounded-md aspect-h-1 aspect-w-1 aspect-square xl:aspect-h-8 xl:aspect-w-7">
-                            <img src="<?php $utility->productPicture($product['image_path']) ?>"
+                            <img src="<?php $utility->productImage($product['image_path']) ?>"
                                 alt="<?php $product['product_name'] ?>."
                                 class="object-cover object-center w-full h-full group-hover:opacity-75">
                         </div>
